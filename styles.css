@@ -1,0 +1,54 @@
+.emphasized {
+   font-size: 1.2em;
+}
+
+
+h3 {
+    color: darkorange
+}
+
+
+hl {
+    color: darkorange;
+    font-weight: bold;
+}
+
+
+.chl {
+    font-size: 1.2em;
+    color: darkorange;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px;
+}
+
+
+.cbox {
+    margin: auto;
+    width: 50%;
+    border: 3px solid darkorange;
+    padding: 10px;
+}
+
+
+.container {
+    display: flex;
+}
+
+
+.columns-3 {
+    flex: 1;
+    text-align: center;
+}
+.column-one {
+    order: 2;
+    text-align: left;
+}
+.column-two {
+    order: 1;
+    text-align: center;
+}
+.column-three {
+    order: 3;
+    text-align: left;
+}
