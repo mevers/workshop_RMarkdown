@@ -111,9 +111,30 @@ Exercise: Show different chunk options
 ## Tables
 
 1. General: How to output tables/dataframes?
-2. Show `DT::datatable` example.
+2. `knitr::kable()`
+2. `DT::datatable`
 
 Excercise: Output a table
+
+
+## Tables: `knitr::kable()`
+
+```{r}
+suppressMessages(library(dplyr));
+suppressMessages(library(knitr));
+kable(starwars[1:4, 1:4])
+```
+
+
+## Tables: `DT::datatable`
+
+```{r}
+suppressMessages(library(dplyr));
+suppressMessages(library(knitr));
+#DT::datatable(starwars, options = list(dom = "ftp", scrollX = TRUE, pageLength = 4));
+DT::datatable(starwars[, 1:4], options = list(pageLength = 8));
+```
+
 
 
 ## Interactive plots
