@@ -24,16 +24,24 @@ MathJax.Hub.Config({
 </script>
 
 
-## Prequesities
+## Prerequisities
 
 **What to know?**
+
 1. Basic R skills
 2. Basic Unix/Linux skills
 
 **What to bring?**
+
 1. Bring laptop
 2. A GitHub account?
 
+**What data to work with?**
+
+Use the starwars dataset from `dplyr`.
+```{r}
+suppressMessages(library(dplyr));
+```
 
 # Prerequisities
 
@@ -46,6 +54,8 @@ MathJax.Hub.Config({
 knitr::include_graphics("figures/new_RMarkdown_doc.png")
 ```
 3. Specifiy output option
+
+Exercise: Create a new R Markdown document in RStudio
 
 
 # Markdown 101
@@ -120,27 +130,45 @@ Excercise: Output a table
 ## Tables: `knitr::kable()`
 
 ```{r}
-suppressMessages(library(dplyr));
 suppressMessages(library(knitr));
 kable(starwars[1:4, 1:4])
 ```
 
 
-## Tables: `DT::datatable`
+## Tables: `DT::datatable()`
 
 ```{r}
-suppressMessages(library(dplyr));
-suppressMessages(library(knitr));
+suppressMessages(library(DT));
 #DT::datatable(starwars, options = list(dom = "ftp", scrollX = TRUE, pageLength = 4));
 DT::datatable(starwars[, 1:4], options = list(pageLength = 8));
 ```
 
 
-
 ## Interactive plots
 
-1. D3 in R
-2. plotly
+1. plotly
+2. D3 in R
+
+**Load the necessary libraries:**
+```{r}
+suppressMessages(library(ggplot2));
+suppressMessages(library(plotly));
+suppressMessages(library(scatterD3));
+```
+
+
+## Interactive plots: `plotly::ggplotly()`
+
+```{r}
+ggplotly(ggplot(starwars, aes(x = height, y = mass, label = name)) + geom_point(), height = 5);
+```
+
+
+## Interactive plots: `scatterD3::scatterD3()`
+
+```{r, fig.height=4.5, fig.width=10}
+scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
+```
 
 
 ## Beyond interactive plots
