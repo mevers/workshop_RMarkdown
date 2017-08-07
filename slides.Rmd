@@ -9,7 +9,7 @@ output:
     fig_width: 10.5
     fig_height: 5.5
     fig_caption: false
-    df_print: paged
+#    df_print: paged
     toc: yes
 #    incremental: true
 #    css: styles.css
@@ -24,7 +24,10 @@ MathJax.Hub.Config({
 </script>
 
 
-## Prerequisities
+# Prerequisities
+
+
+## Prerequisities 1
 
 **What to know?**
 
@@ -36,14 +39,24 @@ MathJax.Hub.Config({
 1. Bring laptop
 2. A GitHub account?
 
-**What data to work with?**
 
-Use the starwars dataset from `dplyr`.
-```{r}
-suppressMessages(library(dplyr));
+## Prerequisities 2
+
+**Which R packages to install/load?**
+```{r results="hide", message=FALSE, warning=FALSE}
+pkg <- c("ggplot2", "rmarkdown", "knitr", "dplyr");
+lapply(pkg, function(x) { if (!require(x, character.only = TRUE, quietly = TRUE)) {
+  install.packages(x);
+  require(x, quietly = TRUE)}
+})
 ```
 
-# Prerequisities
+**What data to work with?**
+
+We will use the `starwars` dataset from `dplyr`.
+```{r}
+head(starwars, n = 4);
+```
 
 
 ## How to get started
