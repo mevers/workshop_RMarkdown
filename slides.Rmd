@@ -101,23 +101,84 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 ## (R) Markdown 101
 
-A note on different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
+Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
 
-Focus here on R Markdown.
+**Focus here on R Markdown.**
 
 1. Headers
 2. Emphasis: bold and italics
 3. Lists: Ordered and unordered
 4. Images and links
 5. Blockquotes
+6. Rules and line breaks
+
+<hr> 
+
+**More details:**
+
+* [Markdown basics](http://rmarkdown.rstudio.com/authoring_basics.html)
+* [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+* [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
-## (R) Markdown 101: Headers
+## (R) Markdown 101 {.columns-2}
 
-...
+**Headers**
+```
+# Header 1
+## Header 2
+### Header 3
+<h4>Header 4</h4>
+<h5>Header 5</h5>
+```
+
+**Emphasis**
+```
+*italic*, _italic_
+**bold**, __bold__
+```
+
+**Lists**
+```
+1. Level 1
+    + Item 1
+    + Item 2
+2. Level 2
+    + Item 3
+    + Item 4
+3. Level 3
+```
+
+
+**Images and links**
+```
+![Alt text](URL)
+[RStudio](https://www.rstudio.com/)
+[email@email.com](mailto:email@email.com)
+```
+
+**Blockquote**
+```
+> RStudio makes R easier to use. It includes a 
+  code editor, debugging & visualization tools.
+```
+
+**Rules**
+```
+----, ****, <hr>
+```
+
+**Manual line breaks**  
+End line with two or more whitespaces.
+```
+Line 1 ends here,␣␣
+line 2 start here.
+```
 
 
 ## (R) Markdown 101: Images
+
+More options to include to include external images/figures.
 
 1. Use `![](path/to/image.png)`
 2. Use HTML `<img src="path/to/image.png" style="width:200px;">`
@@ -169,7 +230,7 @@ output:
 
 ## Controlling the R output: Code chunk options
 
-**Some useful options:**
+**Some useful options**
 
 - `eval=FALSE`: Don't run code.
 - `include=FALSE`: Run code but don't include the chunk in the output document.
@@ -222,7 +283,7 @@ DT::datatable(starwars[, 1:4], options = list(pageLength = 8));
 1. plotly
 2. D3 in R
 
-**Load the necessary libraries:**
+**Load the necessary libraries**
 ```{r}
 suppressMessages(library(ggplot2));
 suppressMessages(library(plotly));
