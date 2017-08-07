@@ -1,5 +1,6 @@
 ---
 title: "Untitled"
+subtitle: "Subtitle"
 author: "Maurits Evers"
 date: "07/08/2017"
 output: 
