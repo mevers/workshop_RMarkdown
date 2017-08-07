@@ -53,16 +53,8 @@ hl {
     text-align: left;
 }
 
-
-<style>
-  .col2 {
-    columns: 2 200px;         /* number of columns and width in pixels*/
-    -webkit-columns: 2 200px; /* chrome, safari */
-    -moz-columns: 2 200px;    /* firefox */
-  }
-  .col3 {
-    columns: 3 100px;
-    -webkit-columns: 3 100px;
-    -moz-columns: 3 100px;
-  }
-</style>
+.boxed {
+  border: 2px solid red;
+  padding: 25px 10px 10px 10px;
+  color: red;
+}

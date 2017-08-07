@@ -12,7 +12,7 @@ output:
 #    df_print: paged
     toc: yes
 #    incremental: true
-#    css: styles.css
+    css: styles.css
 ---
 
 <script type="text/x-mathjax-config">
@@ -87,11 +87,11 @@ knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
 <ol start="2">
 <li> Specifiy output option
 
-```{r echo=FALSE, out.width="500px"}
+```{r echo=FALSE, out.width="450px"}
 knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 ```
 
-<div class="red2">
+<div class="boxed">
 **Exercise:** Create a new R Markdown document in RStudio
 </div>
 
@@ -129,11 +129,14 @@ Focus here on R Markdown.
 
 ## R Markdown output
 
-1. Word
-2. PDF
-3. HTML
+1. Word  
+    [[http://rmarkdown.rstudio.com/word_document_format.html]](http://rmarkdown.rstudio.com/word_document_format.html)
+2. PDF  
+    [[http://rmarkdown.rstudio.com/pdf_document_format.html]](http://rmarkdown.rstudio.com/pdf_document_format.html)
+3. HTML  
+    [[http://rmarkdown.rstudio.com/html_document_format.html]](http://rmarkdown.rstudio.com/html_document_format.html)
 
-<div class="red2">
+<div class="boxed">
 **Exercise:** Create different output documents
 </div>
 
@@ -147,6 +150,10 @@ Focus here on R Markdown.
 
 More details for every output option
 
+<div class="boxed">
+**Exercise:** Change the title/author/date fields of your Rmd document.
+</div>
+
 
 # R Markdown elements
 
@@ -157,7 +164,7 @@ More details for every output option
 2. Plot dimensions
 3. Transparency
 
-<div class="red2">
+<div class="boxed">
 **Exercise:** Show different chunk options
 </div>
 
@@ -165,10 +172,11 @@ More details for every output option
 
 1. General: How to output tables/dataframes?
 2. `knitr::kable()`
-2. `DT::datatable`
+3. `tibble::print.tbl_df()`
+4. `DT::datatable()`
 
-<div class="red2">
-**Excercise:** Output a table
+<div class="boxed">
+**Excercise:** Output a table, and use different layout options.
 </div>
 
 
