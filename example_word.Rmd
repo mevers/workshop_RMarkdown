@@ -1,0 +1,52 @@
+---
+title: "Untitled"
+author: "Maurits Evers"
+date: "07/08/2017"
+output: 
+  word_document:
+#    df_print: kable
+   df_print: tibble
+  
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## PROLOGUE
+
+A long time ago, in a galaxy far, far away...
+
+The Clone Wars were over, leaving entire civilizations in ruin. The Jedi Knights were all but extinct. And the Old Republic — the democratic galactic government that had prevailed for almost 25,000 years — had been replaced by the Galactic Empire.
+
+Yet the Empire’s supreme ruler, the evil Emperor Palpatine, remained hungry for even more power. To expand his rule and crush all remnants of the Old Republic, Palpatine had approved the construction of a secret weapon: the Death Star, an immense armored space station that could destroy an entire planet.
+
+The Empire was not without opposition. The Alliance to Restore the Republic — commonly known as the Rebel Alliance — led the fight to overturn the Empire and bring justice and freedom back to the galaxy.
+
+After Rebel spies learned of the Death Star project, they managed to intercept an Imperial transmission of the space station’s technical data. The Rebels hoped the data would reveal a way to destroy the Death Star. The Empire was determined to recover the stolen plans ... now in the possession of a young Senator from the planet Alderaan, Princess Leia Organa.
+
+## CHAPTER ONE
+
+Bursts of laserfire streaked after the consular starship Tantive IV, which was racing for the planet Tatooine. The ship was fleeing from the Devastator, an immense Imperial Star Destroyer that was firing nearly all its turbolasers at the elusive ship. Both vessels had just entered Tatooine’s orbit when the Devastator’s lasers scored a direct hit on the Tantive IV’s primary sensor array. The array exploded, and the blast overloaded the starboard shield projector — which caused another explosion, damaging the power generator system and triggering a chain reaction throughout the ship. With no starboard shield and no power to its engines, the Tantive IV was effectively crippled.
+
+Inside the battered Tantive IV, the crew raced to extinguish fires as more blasts rocked the ship. Struggling to remain on their feet, Rebel crewmen and troops ran through a narrow white-walled passageway, taking little notice of the two robots that stumbled along with them. The droids were C-3PO, a gold-plated humanoid protocol droid, and his counterpart R2-D2, an astromech with a domed head and cylindrical body who moved on three legs.
+
+“Did you hear that?” C-3PO said to R2-D2 as the Tantive IV’s engines powered down. “They’ve shut down the main reactor. We’ll be destroyed for sure. This is madness!”
+
+More Rebel troops ran into the main corridor. The two droids stepped aside into a shallow alcove to avoid being trampled. The Rebels took up defensive positions and aimed their weapons at a sealed hatch at the end of the corridor.
+
+C-3PO said, “We’re doomed!”
+
+R2-D2 replied with a series of beeps and whistles.
+
+## Data
+
+```{r echo=FALSE, include=FALSE}
+suppressMessages(library(dplyr));
+```
+
+```{r}
+head(starwars[, 1:6]);
+
+```
+
