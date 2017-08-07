@@ -124,7 +124,7 @@ Focus here on R Markdown.
 3. Use `knitr::include_graphics`
 
 
-# From Markdown to R Markdown 
+# R Markdown elements
 
 
 ## R Markdown output
@@ -135,27 +135,36 @@ Focus here on R Markdown.
     [[http://rmarkdown.rstudio.com/pdf_document_format.html]](http://rmarkdown.rstudio.com/pdf_document_format.html)
 3. HTML  
     [[http://rmarkdown.rstudio.com/html_document_format.html]](http://rmarkdown.rstudio.com/html_document_format.html)
+4. Presentation (HTML, $\LaTeX$ beamer)
 
 <div class="boxed">
-**Exercise:** Create different output documents
+**Exercise:** Create different output documents in RStudio
 </div>
 
 
 ## The YAML header
 
-1. Title and subtitle
-2. Author
-3. Date
-4. Output option
+```{YAML}
+---
+title: "Main title"
+subtitle: "Subtitle"
+author: "Firstname Lastname"
+date: "07/08/2017"
+output:
+  word_document
+---
+```
 
-More details for every output option
+**Main keys**
+
+1. Title and subtitle
+2. Author (can have multiple authors as list for key `author`)
+3. Date (can be R code, e.g. `format(Sys.time(), '%d %B %Y')`)
+4. Output option: `html_document`, `pdf_document`, `word_document`, `ioslides_presentation`, `beamer_presentation`
 
 <div class="boxed">
-**Exercise:** Change the title/author/date fields of your Rmd document.
+**Exercise:** Change the title/author/date/output fields of your Rmd document.
 </div>
-
-
-# R Markdown elements
 
 
 ## Controlling the R output: Code chunk options
