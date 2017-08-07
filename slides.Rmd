@@ -23,6 +23,19 @@ MathJax.Hub.Config({
 });
 </script>
 
+<style>
+  .col2 {
+    columns: 2 200px;         /* number of columns and width in pixels*/
+    -webkit-columns: 2 200px; /* chrome, safari */
+    -moz-columns: 2 200px;    /* firefox */
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+
 
 # Prerequisities
 
@@ -59,22 +72,38 @@ head(starwars, n = 4);
 ```
 
 
-## How to get started
-1. Start RStudio
-2. Create new R Markdown document
+## How to get started 1
+
+**Create new R Markdown document in RStudio**
+
+1. File $\rightarrow$ New File $\rightarrow$ R Markdown
+
+```{r echo=FALSE, out.width="800px"}
+knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
+```
+
+
+## How to get started 2
+<ol start="2">
+<li> Specifiy output option
 
 ```{r echo=FALSE, out.width="500px"}
-knitr::include_graphics("figures/new_RMarkdown_doc.png")
+knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 ```
-3. Specifiy output option
 
-Exercise: Create a new R Markdown document in RStudio
-
-
-# Markdown 101
+<div class="red2">
+**Exercise:** Create a new R Markdown document in RStudio
+</div>
 
 
-## Markdown 101
+# (R) Markdown 101
+
+
+## (R) Markdown 101
+
+A note on different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
+
+Focus here on R Markdown.
 
 1. Headers
 2. Emphasis: bold and italics
@@ -82,15 +111,13 @@ Exercise: Create a new R Markdown document in RStudio
 4. Images and links
 5. Blockquotes
 
-A note on different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
 
-
-## Markdown 101: Headers
+## (R) Markdown 101: Headers
 
 ...
 
 
-## Markdown 101: Images
+## (R) Markdown 101: Images
 
 1. Use `![](path/to/image.png)`
 2. Use HTML `<img src="path/to/image.png" style="width:200px;">`
@@ -106,7 +133,9 @@ A note on different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
 2. PDF
 3. HTML
 
-Exercise: Create different output documents
+<div class="red2">
+**Exercise:** Create different output documents
+</div>
 
 
 ## The YAML header
@@ -128,8 +157,9 @@ More details for every output option
 2. Plot dimensions
 3. Transparency
 
-Exercise: Show different chunk options
-
+<div class="red2">
+**Exercise:** Show different chunk options
+</div>
 
 ## Tables
 
@@ -137,7 +167,9 @@ Exercise: Show different chunk options
 2. `knitr::kable()`
 2. `DT::datatable`
 
-Excercise: Output a table
+<div class="red2">
+**Excercise:** Output a table
+</div>
 
 
 ## Tables: `knitr::kable()`
