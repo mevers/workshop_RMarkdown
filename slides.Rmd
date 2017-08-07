@@ -158,15 +158,26 @@ More details for every output option
 # R Markdown elements
 
 
-## Controlling the R output
+## Controlling the R output: Code chunk options
 
-1. Chunk options
-2. Plot dimensions
-3. Transparency
+**Some useful options:**
+
+- `eval=FALSE`: Don't run code.
+- `include=FALSE`: Run code but don't include the chunk in the output document.
+- `echo=FALSE`: Don't show code, show results.
+- `results='hide'`: Show code, don't show results.
+- `message=FALSE`: Don't show any additional R messages.
+- `error=FALSE`: Don't show R error messages.
+- `warning=FALSE`: Don't show R warning messages.
+- `cache=TRUE`: Use cached results (if available) until the code chunk is changed.
+- `fig.width=7, fig.height=7`: Set figure width and height to 7 inches.
+
+More chunk options can be found in e.g. the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
 
 <div class="boxed">
-**Exercise:** Show different chunk options
+**Exercise:** Experiment with different code options: Disable output, results, and code evaluation.
 </div>
+
 
 ## Tables
 
