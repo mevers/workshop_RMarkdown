@@ -429,6 +429,7 @@ Cell 3 | cell 4
 ## Tables: Using `knitr::kable()`
 
 ```{r}
+# Load R package knitr and show table
 suppressMessages(library(knitr));
 kable(starwars[1:6, 1:6])
 ```
@@ -437,6 +438,7 @@ kable(starwars[1:6, 1:6])
 ## Tables: Using `DT::datatable()`
 
 ```{r}
+# Load R package DT and show table
 suppressMessages(library(DT));
 DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 ```
@@ -458,15 +460,19 @@ if (!require("pander", quietly = TRUE)) {
   require("pander", quietly = TRUE)}
 ```
 
-## Interactive plots
+## Static and interactive plots
 
-1. plotly
-2. D3 in R
+1. base R
+2. `ggplot2` from the `tidyverse`
+2. `plotly`
+3. D3 in R
+    + `d3heatmp`
+    + `scatterD3`
+    + `networkD3`
+    + `streamgraph`
 
 **Load the necessary libraries**
 ```{r}
-suppressMessages(library(ggplot2));
-suppressMessages(library(plotly));
 suppressMessages(library(scatterD3));
 ```
 
@@ -474,7 +480,8 @@ suppressMessages(library(scatterD3));
 ## Interactive plots: `plotly::ggplotly()`
 
 ```{r}
-ggplotly(ggplot(starwars, aes(x = height, y = mass, label = name)) + geom_point(), height = 5);
+suppressMessages(library(plotly));
+ggplotly(ggplot(starwars, aes(x = height, y = mass, label = name)) + geom_point(), height = 3);
 ```
 
 
