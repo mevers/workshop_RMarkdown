@@ -85,16 +85,42 @@ knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
 
 ## How to get started 2
 <ol start="2">
-<li> Specifiy output option
+<li> Specify output option
 
-```{r echo=FALSE, out.width="450px"}
+```{r echo=FALSE, out.width="500px"}
 knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 ```
 
-<div class="boxed">
-**Exercise:** Create a new R Markdown document in RStudio
-</div>
+<li>Render
 
+## <font color="forestgreen">**Exercise**</font> {#ex}
+1. Create a new R Markdown document in RStudio.
+2. Select PDF, HTML and Word as output option.
+3. Render the Markdown document to the corresponding output formats.
+4. Locate and open the final output file.
+
+
+## Under the hood
+
+**Document conversion**
+
+1. Rmd -> PDF, HTML, Word uses `rmarkdown::render()` (`knitr::pandoc()` is deprecated)
+2. `rmarkdown::render()` makes use of the universal document converter pandoc (installed as part of RStudio)
+
+For example, pandoc will translate
+```{md}
+# Header
+```
+into the following output-specific lines:
+
+1. For HTML output
+    ```{HTML}
+    <h1>Header</h1>
+    ```
+2. For $\LaTeX$ output
+    ```{LATEX}
+    \section{Header}
+    ```
 
 # (R) Markdown 101
 
@@ -112,8 +138,6 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 5. Blockquotes
 6. Rules and line breaks
 
-<hr> 
-
 **More details:**
 
 * [Markdown basics](http://rmarkdown.rstudio.com/authoring_basics.html)
@@ -124,22 +148,21 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 ## (R) Markdown 101 {.columns-2}
 
 **Headers**
-```
+```markdown
 # Header 1
 ## Header 2
 ### Header 3
-<h4>Header 4</h4>
-<h5>Header 5</h5>
+#### Header 4
 ```
 
 **Emphasis**
-```
+```markdown
 *italic*, _italic_
 **bold**, __bold__
 ```
 
 **Lists**
-```
+```markdown
 1. Level 1
     + Item 1
     + Item 2
@@ -151,29 +174,80 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 
 
 **Images and links**
-```
+```markdown
 ![Alt text](URL)
 [RStudio](https://www.rstudio.com/)
 [email@email.com](mailto:email@email.com)
 ```
 
 **Blockquote**
-```
+```markdown
 > RStudio makes R easier to use. It includes a 
   code editor, debugging & visualization tools.
 ```
 
 **Rules**
-```
-----, ****, <hr>
+```markdown
+----, ****
 ```
 
 **Manual line breaks**  
 End line with two or more whitespaces.
-```
+```markdown
 Line 1 ends here,␣␣
 line 2 start here.
 ```
+
+
+## (R) Markdown 101 {.columns-2}
+
+**Tables**  
+Assemble list of words, and divide them with hyphens - (for the first row), and then separating each column with a pipe |.
+```markdown
+First Header | Second Header
+------------ | -------------
+Cell 1 | Cell 2
+Cell 3 | cell 4
+```
+
+**Fenced code blocks**  
+Lines wrapped within an environment with leading and tailing ```` ``` ```` are converted into a code block.  
+An optional language identifier provides syntax highlighting.  
+
+````markdown
+```bash
+echo "3 + 4"
+```
+````
+
+R code blocks will be evaluated and printed (replace double with single curly brackets).
+
+````markdown
+```{{r}}
+3 + 4
+```
+````
+
+**Inline code**  
+Use single backticks `` ` `` (delete curly brackets)
+```markdown
+`{r} summary(starwars)`
+```
+
+
+**Equations**  
+The power of $\LaTeX$
+```markdown
+$x = a$
+$$ int_{x=0}^\infty dx \log{1+x} $$
+```
+
+
+## <font color="forestgreen">Exercise</font> {#ex}
+
+1. Experiment with different markdown elements in your markdown document
+2. Render the document and check the resulting output file
+3. Are there any specific text elements you would like to typeset?
 
 
 ## (R) Markdown 101: Images
