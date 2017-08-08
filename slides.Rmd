@@ -87,7 +87,7 @@ Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers
 
 **Important R packages**
 ```{r results="hide", message=FALSE, warning=FALSE}
-pkg <- c("ggplot2", "rmarkdown", "knitr", "dplyr");
+pkg <- c("ggplot2", "rmarkdown", "knitr", "dplyr", "hrbrthemes", "scatterD3");
 lapply(pkg, function(x) { if (!require(x, character.only = TRUE, quietly = TRUE)) {
   install.packages(x);
   require(x, quietly = TRUE)}
@@ -463,38 +463,53 @@ if (!require("pander", quietly = TRUE)) {
 ## Static and interactive plots
 
 1. base R
-2. `ggplot2` from the `tidyverse`
-2. `plotly`
-3. D3 in R
-    + `d3heatmp`
-    + `scatterD3`
-    + `networkD3`
-    + `streamgraph`
+2. [`ggplot2`](http://ggplot2.org/) from the [`tidyverse`](http://www.tidyverse.org/)
+<p style="margin-top:2em">
+3. [`plotly`](https://plot.ly/r/)
+4. [`dygraph`](https://rstudio.github.io/dygraphs/r-markdown.html) 
+5. D3 in R
+    + [`d3heatmp`](https://github.com/rstudio/d3heatmap)
+    + [`scatterD3`](https://github.com/juba/scatterD3)
+    + [`networkD3`](https://christophergandrud.github.io/networkD3/)
+    + [`streamgraph`](https://github.com/hrbrmstr/streamgraph)
 
-**Load the necessary libraries**
-```{r}
-suppressMessages(library(scatterD3));
+
+## Static plot: `ggplot2::ggplot()`
+
+<p style="margin-top:-2em">
+```{r, fig.width = 10, fig.height = 5}
+df <- cbind.data.frame(skin_color = unlist(lapply(starwars$skin_color, strsplit, ", "))); 
+ggplot(df, aes(skin_color)) + geom_bar() + theme_bw() + theme(axis.text.x = element_text(angle = 90, hjust = 1));
 ```
 
 
 ## Interactive plots: `plotly::ggplotly()`
 
+<p style="margin-top:-2em">
+```{r include=FALSE}
+suppressWarnings(suppressMessages(library(plotly)));
+```
 ```{r}
-suppressMessages(library(plotly));
-ggplotly(ggplot(starwars, aes(x = height, y = mass, label = name)) + geom_point(), height = 3);
+ggplotly(ggplot(starwars, aes(x = height, y = mass, label = name)) + geom_point() 
+  + stat_smooth(fullrange = TRUE, method = "lm", na.rm = TRUE) + theme_bw(), height = 460, width = 960);
 ```
 
 
 ## Interactive plots: `scatterD3::scatterD3()`
 
-```{r, fig.height=4.5, fig.width=10}
+<p style="margin-top:-2em">
+```{r, fig.height=5, fig.width=10}
 scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
 ```
 
 
 ## Beyond interactive plots
 
-R Markdown and shiny
+**Example 1:** RMarkdown and shiny integration
+
+**Example 2:** Bookdown
+
+
 
 
 ## Link with github
