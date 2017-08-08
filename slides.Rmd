@@ -51,7 +51,9 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 3. Customising R markdown elements and outputs
 4. To interactivity and beyond!
 
-<div class="boxed">Exercise and question sessions.</div>
+<p style="margin-top:4em">
+
+<div class="boxed">Interactive sessions.</div>
 
 
 # Prerequisities and how to get started
@@ -123,7 +125,7 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 <li> **Render** <img src="figures/button_knit.png" style="width:80px;">
 
-## <font color="forestgreen">**Exercise**</font> {#ex}
+## <font color="forestgreen">**Interactive session**</font> {#ex}
 <ol start="0">
 <li> If you need help with setting up RStudio and the necessary packages, this is the time...
 <p style="margin-top:2em">
@@ -159,14 +161,16 @@ into the following output-specific lines:
     \section{Header}
     ```
 
-# (R) Markdown 101
+# (R)Markdown 101
 
 
-## (R) Markdown 101
+## (R)Markdown 101
 
 Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ...
 
-**Focus here on R Markdown.**
+<p style="margin-top:2em">
+
+**Here: Focus on RMarkdown, and the following elements**
 
 1. Headers
 2. Emphasis: bold and italics
@@ -175,6 +179,8 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 5. Blockquotes
 6. Rules and line breaks
 
+<p style="margin-top:2em">
+
 **More details:**
 
 * [Markdown basics](http://rmarkdown.rstudio.com/authoring_basics.html)
@@ -182,7 +188,7 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 * [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
-## (R) Markdown 101 {.columns-2}
+## (R)Markdown 101 -- continued {.columns-2}
 
 **Headers**
 ```markdown
@@ -236,7 +242,7 @@ line 2 start here.
 ```
 
 
-## (R) Markdown 101 {.columns-2}
+## (R)Markdown 101 -- continued {.columns-2}
 
 **Tables**  
 Assemble list of words, and divide them with hyphens - (for the first row), and then separating each column with a pipe |.
@@ -273,50 +279,65 @@ Use single backticks `` ` `` (delete curly brackets)
 
 
 **Equations**  
-The power of $\LaTeX$
+The power of $\LaTeX$ (MathJax)
 ```markdown
 $x = a$
 $$ int_{x=0}^\infty dx \log{1+x} $$
 ```
 
 
-## <font color="forestgreen">Exercise</font> {#ex}
+## <font color="forestgreen">Interactive session</font> {#ex}
 
-1. Experiment with different markdown elements in your markdown document
+1. Experiment with different markdown elements in your RMarkdown document
 2. Render the document and check the resulting output file
 3. Are there any specific text elements you would like to typeset?
 
 
-## (R) Markdown 101: Images
+## (R) Markdown 101 -- Language-specific layouting
 
-More options to include to include external images/figures.
+You can use language-specific expressions in RMarkdown documents.
 
-1. Use `![](path/to/image.png)`
-2. Use HTML `<img src="path/to/image.png" style="width:200px;">`
-3. Use `knitr::include_graphics`
+For example:
 
+1. In HTML documents, you can use
+    + `<img src="path/to/image.png" style="width:200px;">` to place an image,
+    + `<hr>` to place a horizontal rule,
+    + `<ol start="10"><li>...</ol>` to create an ordered list,
+    + most HTML code tags.
+2. In PDF documents, you can use
+    + `\includegraphics[width=\textwidth]{...}` to place an image,
+    + `\begin{minipage}{.5\textwidth}...\end{minipage}` to fine-tune horizontal and vertical text/figure layout,
+    + a lot of the $\LaTeX$ syntax.
+    
+Beware: A HTML statement won't be recognised if you render your RMarkdown file as a Word document.
+    
 
 # R Markdown elements
 
 
-## R Markdown output
+## R Markdown output {.columns-2}
 
-1. Word  
-    [[http://rmarkdown.rstudio.com/word_document_format.html]](http://rmarkdown.rstudio.com/word_document_format.html)
-2. PDF  
-    [[http://rmarkdown.rstudio.com/pdf_document_format.html]](http://rmarkdown.rstudio.com/pdf_document_format.html)
-3. HTML  
-    [[http://rmarkdown.rstudio.com/html_document_format.html]](http://rmarkdown.rstudio.com/html_document_format.html)
-4. Presentation (HTML, $\LaTeX$ beamer)
+```{r echo=FALSE, out.width="450px"}
+knitr::include_graphics("figures/RMarkdown_formats.png")
+```
 
-<div class="boxed">
-**Exercise:** Create different output documents in RStudio
-</div>
+**Growing list of output options**
+
+1. [Word](http://rmarkdown.rstudio.com/word_document_format.html)
+2. [PDF](http://rmarkdown.rstudio.com/pdf_document_format.html)
+3. [HTML](http://rmarkdown.rstudio.com/html_document_format.html)
+4. Presentation styles 
+    + [ioslides](http://rmarkdown.rstudio.com/ioslides_presentation_format.html)
+    + [slidify](http://slidify.org)
+    + [reveal.js](http://rmarkdown.rstudio.com/revealjs_presentation_format.html)
+    + [$\LaTeX$ beamer](http://rmarkdown.rstudio.com/beamer_presentation_format.html)
+5. [Tufte handouts](http://rmarkdown.rstudio.com/tufte_handout_format.html)
+5. [Bookdown](https://bookdown.org/yihui/bookdown/)
 
 
 ## The YAML header
 
-```{YAML}
+```yaml
 ---
 title: "Main title"
 subtitle: "Subtitle"
@@ -327,6 +348,8 @@ output:
 ---
 ```
 
+<p style="margin-top:2em">
+
 **Main keys**
 
 1. Title and subtitle
@@ -334,9 +357,12 @@ output:
 3. Date (can be R code, e.g. `format(Sys.time(), '%d %B %Y')`)
 4. Output option: `html_document`, `pdf_document`, `word_document`, `ioslides_presentation`, `beamer_presentation`
 
-<div class="boxed">
-**Exercise:** Change the title/author/date/output fields of your Rmd document.
-</div>
+
+## <font color="forestgreen">**Interactive session**</font> {#ex}
+1. Make changes to the existing YAML header keys (title, author and date)
+2. Add a subtitle to your document
+2. Add multiple authors
+3. Change the output from a Word document to a ioslides presentation
 
 
 ## Controlling the R output: Code chunk options
@@ -351,13 +377,29 @@ output:
 - `error=FALSE`: Don't show R error messages.
 - `warning=FALSE`: Don't show R warning messages.
 - `cache=TRUE`: Use cached results (if available) until the code chunk is changed.
-- `fig.width=7, fig.height=7`: Set figure width and height to 7 inches.
+- `fig.width=7, fig.height=7`: Set actual figure width and height to 7 inches.
+- `out.width=5, out.height=5`: Set output document figure width and height to 5 inches; if `fig.width, fig.height` are different, the output is scaled.  
 
-More chunk options can be found in e.g. the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf).
+<p style="margin-top:2em">
 
-<div class="boxed">
-**Exercise:** Experiment with different code options: Disable output, results, and code evaluation.
-</div>
+More chunk options can be found e.g. in the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) and in [`knitr`'s documentation](https://yihui.name/knitr/options/).
+
+
+## <font color="forestgreen">**Interactive session**</font> {#ex}
+1. Write R code to show a barplot of how many characters participated in every Star Wars film.
+2. Include a code chunk without executing it.
+1. Disable R output from an R code chunk.
+3. Only show the output of an R code chunk.
+4. Change the dimension of a (gg)plot.
+
+<p style="margin-top:4em">
+
+Hint:
+```
+# R code
+df <- cbind.data.frame(film = unlist(starwars$films));
+ggplot(data = df, aes(film)) + geom_bar();
+```
 
 
 ## Tables
