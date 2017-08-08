@@ -37,7 +37,24 @@ MathJax.Hub.Config({
 </style>
 
 
-# Prerequisities
+## Overview {.columns-2}
+
+```{r echo=FALSE, out.width="450px"}
+knitr::include_graphics("figures/RMarkdown_formats.png")
+```
+
+
+**What we will cover**
+
+1. Prerequisities and how to get started
+2. (R)Markdown 101
+3. Customising R markdown elements and outputs
+4. To interactivity and beyond!
+
+<div class="boxed">Exercise and question sessions.</div>
+
+
+# Prerequisities and how to get started
 
 
 ## Prerequisities 1
