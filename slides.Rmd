@@ -59,20 +59,31 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 ## Prerequisities 1
 
-**What to know?**
+**For this workshop**
 
-1. Basic R skills
+Presenters: [Maurits Evers](mailto:maurits.evers@anu.edu.au), [Sebastian Kurscheid](mailto:sebastian.kurscheid@anu.edu.ai)  
+Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers/workshop_RMarkdown)
+
+<p style="margin-top:2em">
+
+**What you should bring / have brought**
+
+1. A laptop with a recent RStudio release already installed
+2. A set of questions
+3. (Optional) A sample text document for you to layout in RMarkdown
+
+<p style="margin-top:2em">
+
+**What you should be familiar with**
+
+1. Basic R skills: Know what a `dataframe` is; how to produce a plot; how to inspect an element, ...
 2. Basic Unix/Linux skills
 
-**What to bring?**
-
-1. Bring laptop
-2. A GitHub account?
 
 
 ## Prerequisities 2
 
-**Which R packages to install/load?**
+**Important R packages**
 ```{r results="hide", message=FALSE, warning=FALSE}
 pkg <- c("ggplot2", "rmarkdown", "knitr", "dplyr");
 lapply(pkg, function(x) { if (!require(x, character.only = TRUE, quietly = TRUE)) {
@@ -81,19 +92,21 @@ lapply(pkg, function(x) { if (!require(x, character.only = TRUE, quietly = TRUE)
 })
 ```
 
-**What data to work with?**
+<p style="margin-top:2em">
+
+**Example data**
 
 We will use the `starwars` dataset from `dplyr`.
 ```{r}
-head(starwars, n = 4);
+head(starwars, n = 3);
 ```
 
 
 ## How to get started 1
 
-**Create new R Markdown document in RStudio**
+**Create new RMarkdown (Rmd) document in RStudio**
 
-1. File $\rightarrow$ New File $\rightarrow$ R Markdown
+1. **File $\rightarrow$ New File $\rightarrow$ R Markdown**
 
 ```{r echo=FALSE, out.width="800px"}
 knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
@@ -102,40 +115,47 @@ knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
 
 ## How to get started 2
 <ol start="2">
-<li> Specify output option
+<li> **Specify output option**
 
 ```{r echo=FALSE, out.width="500px"}
 knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 ```
 
-<li>Render
+<li> **Render** <img src="figures/button_knit.png" style="width:80px;">
 
 ## <font color="forestgreen">**Exercise**</font> {#ex}
-1. Create a new R Markdown document in RStudio.
-2. Select PDF, HTML and Word as output option.
-3. Render the Markdown document to the corresponding output formats.
-4. Locate and open the final output file.
+<ol start="0">
+<li> If you need help with setting up RStudio and the necessary packages, this is the time...
+<p style="margin-top:2em">
+<li> Create a new R Markdown (Rmd) document in RStudio.
+<li> Select PDF, HTML and Word as output option.
+<li> Render the RMarkdown document to the corresponding output formats.
+<li> Locate and open the final output file.
+<li> Change the output format of an existing RMarkdown document
+</ol>
 
 
 ## Under the hood
 
 **Document conversion**
 
-1. Rmd -> PDF, HTML, Word uses `rmarkdown::render()` (`knitr::pandoc()` is deprecated)
-2. `rmarkdown::render()` makes use of the universal document converter pandoc (installed as part of RStudio)
+1. Rmd $\rightarrow$ PDF, HTML, Word uses `rmarkdown::render()` (note that `knitr::pandoc()` is deprecated)
+2. `rmarkdown::render()` uses the universal document converter pandoc (installed as part of RStudio)
+
+<p style="margin-top:2em">
 
 For example, pandoc will translate
-```{md}
+```markdown
 # Header
 ```
 into the following output-specific lines:
 
 1. For HTML output
-    ```{HTML}
+    ```html
     <h1>Header</h1>
     ```
 2. For $\LaTeX$ output
-    ```{LATEX}
+    ```latex
     \section{Header}
     ```
 
