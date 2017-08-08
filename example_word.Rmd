@@ -1,13 +1,12 @@
 ---
 title: "Untitled"
-subtitle: "Subtitle"
 author: "Maurits Evers"
 date: "07/08/2017"
-output: 
+output:
   word_document:
-#    df_print: kable
-   df_print: tibble
-  
+    df_print: tibble
+  html_document: default
+subtitle: Subtitle
 ---
 
 ```{r setup, include=FALSE}
@@ -51,3 +50,6 @@ head(starwars[, 1:6]);
 
 ```
 
+## Image
+
+![](figures/imperialseal.jpg)
