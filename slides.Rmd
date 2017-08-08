@@ -387,16 +387,17 @@ More chunk options can be found e.g. in the [R Markdown Reference Guide](https:/
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
 1. Write R code to show a barplot of how many characters participated in every Star Wars film.
-2. Include a code chunk without executing it.
+2. Include the R code chunk without executing it.
 1. Disable R output from an R code chunk.
 3. Only show the output of an R code chunk.
-4. Change the dimension of a (gg)plot.
+4. Change the dimension of the (gg)plot.
 
 <p style="margin-top:4em">
 
 Hint:
 ```
 # R code
+# Extract all films per character
 df <- cbind.data.frame(film = unlist(starwars$films));
 ggplot(data = df, aes(film)) + geom_bar();
 ```
@@ -404,32 +405,58 @@ ggplot(data = df, aes(film)) + geom_bar();
 
 ## Tables
 
-1. General: How to output tables/dataframes?
-2. `knitr::kable()`
-3. `tibble::print.tbl_df()`
-4. `DT::datatable()`
+**Different ways to present tabular data.**
 
-<div class="boxed">
-**Excercise:** Output a table, and use different layout options.
-</div>
+<ol>
+<li> Manual table creation  
+```
+First Header | Second Header
+------------ | -------------
+Cell 1 | Cell 2
+Cell 3 | cell 4
+```
+<li> `knitr::kable()` (*all output*)
+<li> `pander::pandoc.table()` (*all output*)
+<li> `xtable::xtable()` (*only HTML and $\LaTeX$ output*)
+<li> `stargazer::stargazer()` (*only HTML and $\LaTeX$ output*)
+
+<p style="margin-top:2em">
+
+<li> `DT::datatable()` (*only HTML output, interactive*)
+</ol>
 
 
-## Tables: `knitr::kable()`
+## Tables: Using `knitr::kable()`
 
 ```{r}
 suppressMessages(library(knitr));
-kable(starwars[1:4, 1:4])
+kable(starwars[1:6, 1:6])
 ```
 
 
-## Tables: `DT::datatable()`
+## Tables: Using `DT::datatable()`
 
 ```{r}
 suppressMessages(library(DT));
-#DT::datatable(starwars, options = list(dom = "ftp", scrollX = TRUE, pageLength = 4));
-DT::datatable(starwars[, 1:4], options = list(pageLength = 8));
+DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 ```
 
+
+## <font color="forestgreen">**Interactive session**</font> {#ex}
+
+1. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
+2. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
+
+<p style="margin-top:4em">
+
+Note: Depending on the R method, you might have to install additional R packages, e.g. for `pander`:
+```
+# R code
+# Install (if necessary) and load R package 'pander'
+if (!require("pander", quietly = TRUE)) {
+  install.packages("pander");
+  require("pander", quietly = TRUE)}
+```
 
 ## Interactive plots
 
