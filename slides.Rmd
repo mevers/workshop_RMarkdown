@@ -335,7 +335,7 @@ For example:
     + `<img src="path/to/image.png" style="width:200px;">` to place an image,
     + `<hr>` to place a horizontal rule,
     + `<ol start="10"><li>...</ol>` to create an ordered list,
-    + most HTML code tags.
+    + most HTML code tags (e.g. `<u>`, `<del>`, ...).
 2. In PDF documents, you can use
     + `\includegraphics[width=\textwidth]{...}` to place an image,
     + `\begin{minipage}{.5\textwidth}...\end{minipage}` to fine-tune horizontal and vertical text/figure layout,
