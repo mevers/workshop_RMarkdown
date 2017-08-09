@@ -90,11 +90,10 @@ Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers
 
 ## Prerequisities 2
 
-**Important R packages and cheat sheet**
+**Important R packages**
 ```{r results="hide", message=FALSE, warning=FALSE}
 source("https://gist.github.com/mevers/ac8eccfe45b0638a8b9a258664c91741/raw/install_workshop_libs.R");
 ```
-[RMarkdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 <p style="margin-top:2em">
 
@@ -147,29 +146,36 @@ download.file(
 </ol>
 
 
-## Under the hood
+## Under the hood of RStudio
 
 **Document conversion**
 
-1. Rmd $\rightarrow$ PDF, HTML, Word uses `rmarkdown::render()` (note that `knitr::pandoc()` is deprecated)
-2. `rmarkdown::render()` uses the universal document converter pandoc (installed as part of RStudio)
+1. RStudio's Rmd $\rightarrow$ (PDF, HTML, Word) uses `rmarkdown::render()`  
+    (previously `knitr::pandoc()`, now deprecated)
+2. `rmarkdown::render()` uses the universal document converter [`pandoc`](https://pandoc.org)  
+    (automatically installed as part of RStudio)
 
-<p style="margin-top:2em">
+<p style="margin-top:3em">
 
-For example, pandoc will translate
+For example, `pandoc` will translate
 ```markdown
 # Header
 ```
 into the following output-specific lines:
 
-1. For HTML output
-    ```html
-    <h1>Header</h1>
-    ```
-2. For $\LaTeX$ output
-    ```latex
-    \section{Header}
-    ```
+<div class="columns-2">
+<p>For HTML output
+```html
+<h1>Header</h1>
+```
+</p>
+
+<p>For $\LaTeX$ output
+```latex
+\section{Header}
+```
+</p>
+</div>
 
 # (R)Markdown 101
 
@@ -183,7 +189,7 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 **Here: Focus on RMarkdown, and the following elements**
 
 1. Headers
-2. Emphasis: bold and italics
+2. Emphasis: *bold* and **italics** (note: no underline) 
 3. Lists: Ordered and unordered
 4. Images and links
 5. Blockquotes
@@ -194,14 +200,21 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 **More details:**
 
 * [Markdown basics](http://rmarkdown.rstudio.com/authoring_basics.html)
-* [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+* [RMarkdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
 * [Markdown Cheat Sheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
 
 ## (R)Markdown 101 -- continued {.columns-2}
 
+```{r include=FALSE}
+opts_chunk$set(
+  eval=FALSE, 
+  warning=FALSE, 
+  message=FALSE)
+```
+
 **Headers**
-```markdown
+```
 # Header 1
 ## Header 2
 ### Header 3
@@ -209,13 +222,13 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 ```
 
 **Emphasis**
-```markdown
+```
 *italic*, _italic_
 **bold**, __bold__
 ```
 
 **Lists**
-```markdown
+```
 1. Level 1
     + Item 1
     + Item 2
@@ -227,26 +240,26 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 
 
 **Images and links**
-```markdown
+```
 ![Alt text](URL)
 [RStudio](https://www.rstudio.com/)
 [email@email.com](mailto:email@email.com)
 ```
 
 **Blockquote**
-```markdown
+```
 > RStudio makes R easier to use. It includes a 
   code editor, debugging & visualization tools.
 ```
 
 **Rules**
-```markdown
+```
 ----, ****
 ```
 
 **Manual line breaks**  
 End line with two or more whitespaces.
-```markdown
+```
 Line 1 ends here,␣␣
 line 2 start here.
 ```
@@ -256,7 +269,7 @@ line 2 start here.
 
 **Tables**  
 Assemble list of words, and divide them with hyphens - (for the first row), and then separating each column with a pipe |.
-```markdown
+```
 First Header | Second Header
 ------------ | -------------
 Cell 1 | Cell 2
@@ -267,40 +280,49 @@ Cell 3 | cell 4
 Lines wrapped within an environment with leading and tailing ```` ``` ```` are converted into a code block.  
 An optional language identifier provides syntax highlighting.  
 
-````markdown
+````
 ```bash
 echo "3 + 4"
 ```
 ````
 
-R code blocks will be evaluated and printed (replace double with single curly brackets).
+R code blocks will be evaluated and printed (*replace double with single curly brackets*).
 
-````markdown
+````
 ```{{r}}
 3 + 4
 ```
 ````
 
 **Inline code**  
-Use single backticks `` ` `` (delete curly brackets)
-```markdown
+Use single backticks `` ` `` (*delete curly brackets*)
+```
 `{r} summary(starwars)`
 ```
 
 
 **Equations**  
 The power of $\LaTeX$ (MathJax)
-```markdown
+```
 $x = a$
 $$ int_{x=0}^\infty dx \log{1+x} $$
 ```
 
 
-## <font color="forestgreen">Interactive session</font> {#ex}
+## <font color="forestgreen">Interactive session 2</font> {#ex}
 
 1. Experiment with different markdown elements in your RMarkdown document
+    + Introduce headers
+    + Emphasise words by making them italic
+2. Evaluate R code and show results
+    + Return Tukey's five number summary of the height of all starwars characters
+    + Show a summary table of the gender distribution based on all starwars characters
+    + Show those characters of the starwars dataframe that have no reported gender
 2. Render the document and check the resulting output file
-3. Are there any specific text elements you would like to typeset?
+3. Are there any specific text elements you would like to typeset? For example, what about ...
+    + ... underlining text?
+    + ... strikethrough text?
+    + ... ?
 
 
 ## (R) Markdown 101 -- Language-specific layouting
