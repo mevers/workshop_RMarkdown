@@ -325,7 +325,7 @@ $$ int_{x=0}^\infty dx \log{1+x} $$
     + ... ?
 
 
-## (R) Markdown 101 -- Language-specific layouting
+## (R)Markdown 101 -- Output-specific layouting
 
 You can use language-specific expressions in RMarkdown documents.
 
@@ -341,7 +341,7 @@ For example:
     + `\begin{minipage}{.5\textwidth}...\end{minipage}` to fine-tune horizontal and vertical text/figure layout,
     + a lot of the $\LaTeX$ syntax.
     
-Beware: A HTML statement won't be recognised if you render your RMarkdown file as a Word document.
+**Beware: A HTML statement won't be recognised if you render your RMarkdown file as a Word document.**
     
 
 # RMarkdown elements
@@ -350,7 +350,7 @@ Beware: A HTML statement won't be recognised if you render your RMarkdown file a
 ## RMarkdown style advice
 
 1. **Uniquely name your code chunks** (*replace double with single curly brackets*)
-```markdown
+```
  ```{{r chunk_name, ...}}
 ```
     + increases readibility
