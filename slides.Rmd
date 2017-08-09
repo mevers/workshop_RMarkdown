@@ -312,10 +312,24 @@ For example:
 Beware: A HTML statement won't be recognised if you render your RMarkdown file as a Word document.
     
 
-# R Markdown elements
+# RMarkdown elements
 
 
-## R Markdown output {.columns-2}
+## RMarkdown style advice
+
+1. **Uniquely name your code chunks** (*replace double with single curly brackets*)
+```markdown
+ ```{{r chunk_name, ...}}
+```
+    + increases readibility
+    + helps with caching
+2. **Whitespace is important**: 
+    + Two whitespaces at the end of a line identify a manual linebreak
+    + A list requires a preceding newline (this is not the case in e.g. GitHub-flavoured markdown)
+3. **Don't** `dev.off()`: Devices are handled internally!
+
+
+## RMarkdown output {.columns-2}
 
 ```{r echo=FALSE, out.width="450px"}
 knitr::include_graphics("figures/RMarkdown_formats.png")
@@ -460,14 +474,20 @@ if (!require("pander", quietly = TRUE)) {
   require("pander", quietly = TRUE)}
 ```
 
-## Static and interactive plots
+## Static and interactive plots and figures
 
-1. base R
-2. [`ggplot2`](http://ggplot2.org/) from the [`tidyverse`](http://www.tidyverse.org/)
+1. Insert external figures/plots (*replace double with single curly brackets*)
+```markdown
+ ```{{r echo=FALSE, out.width="450px"}}
+ knitr::include_graphics("path/to/figure.png")
+ ```
+```
+2. base R `plot` (*all output*)
+3. [`ggplot2`](http://ggplot2.org/) from the [`tidyverse`](http://www.tidyverse.org/) (*all output*)
 <p style="margin-top:2em">
-3. [`plotly`](https://plot.ly/r/)
-4. [`dygraph`](https://rstudio.github.io/dygraphs/r-markdown.html) 
-5. D3 in R
+4. [`plotly`](https://plot.ly/r/) (*only HTML output*)
+5. [`dygraph`](https://rstudio.github.io/dygraphs/r-markdown.html) (*only HTML output*)
+6. [D3.js](https://d3js.org) in R (*only HTML output*)
     + [`d3heatmp`](https://github.com/rstudio/d3heatmap)
     + [`scatterD3`](https://github.com/juba/scatterD3)
     + [`networkD3`](https://christophergandrud.github.io/networkD3/)
