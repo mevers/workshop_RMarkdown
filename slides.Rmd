@@ -333,6 +333,11 @@ Beware: A HTML statement won't be recognised if you render your RMarkdown file a
     + A list requires a preceding newline (this is not the case in e.g. GitHub-flavoured markdown)
 3. **Don't** `dev.off()`: Devices are handled internally!
 
+<p style="margin-top:4em">
+
+More Markdown-generic details:  
+[Markdown style guide](http://www.cirosantilli.com/markdown-style-guide)
+
 
 ## RMarkdown output {.columns-2}
 
@@ -378,10 +383,19 @@ output:
 
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
-1. Make changes to the existing YAML header keys (title, author and date)
-2. Add a subtitle to your document
-2. Add multiple authors
-3. Change the output from a Word document to a ioslides presentation
+1. Make changes to the existing YAML header keys title and author.
+2. Change the date to automatically give the current "DayOfTheWeek, Day MonthName YearWithCentury".
+2. Add a subtitle to your document.
+2. Add a second authors.
+3. Change the output from a Word document to a ioslides presentation.
+
+<p style="margin-top:4em">
+
+Hint:
+```
+# R code
+?strptime
+```
 
 
 ## Controlling the R output: Code chunk options
@@ -443,6 +457,7 @@ ggplot(data = df, aes(film)) + geom_bar();
 
 $$
 \begin{aligned}
+\phantom{...} \\
 \frac{dq_i}{dt} &= \frac{\partial H}{\partial p_i} \\
 \frac{dp_i}{dt} &= -\frac{\partial H}{\partial q_i}
 \end{aligned}
@@ -492,8 +507,9 @@ DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
 
-1. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
-2. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
+1. Manually construct a table with four columns, two rows and a header.
+2. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
+3. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
 
 <p style="margin-top:4em">
 
@@ -555,15 +571,16 @@ scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
 ```
 
 
+## <font color="forestgreen">**Interactive session**</font> {#ex}
+
+1. ...
+2. ...
+3. ...
+
+
 ## Beyond interactive plots
 
 **Example 1:** RMarkdown and shiny integration
 
 **Example 2:** Bookdown
 
-
-
-
-## Link with github
-
-...
