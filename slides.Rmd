@@ -206,13 +206,6 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 
 ## (R)Markdown 101 -- continued {.columns-2}
 
-```{r include=FALSE}
-opts_chunk$set(
-  eval=FALSE, 
-  warning=FALSE, 
-  message=FALSE)
-```
-
 **Headers**
 ```
 # Header 1
@@ -313,16 +306,15 @@ $$ int_{x=0}^\infty dx \log{1+x} $$
 
 1. Experiment with different markdown elements in your RMarkdown document
     + Introduce headers
-    + Emphasise words by making them italic
+    + Emphasise words (e.g. Star Wars characters in the text) by making them italic
+    + Create a [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)/[Wookieepedia](http://starwars.wikia.com/wiki/Main_Page) link to a planet's name. 
 2. Evaluate R code and show results
-    + Return Tukey's five number summary of the height of all starwars characters
-    + Show a summary table of the gender distribution based on all starwars characters
-    + Show those characters of the starwars dataframe that have no reported gender
+    + Return Tukey's five number summary of the height of all `starwars` characters
+    + Show a summary table of the gender distribution based on all `starwars` characters
+    + Show those characters of the `starwars` `dataframe` that have no reported gender
 2. Render the document and check the resulting output file
 3. Are there any specific text elements you would like to typeset? For example, what about ...
-    + ... underlining text?
-    + ... strikethrough text?
-    + ... ?
+    + ... underlining/strikethrough text?
 
 
 ## (R)Markdown 101 -- Output-specific layouting
@@ -357,7 +349,8 @@ For example:
     + helps with caching
 2. **Whitespace is important**: 
     + Two whitespaces at the end of a line identify a manual linebreak
-    + A list requires a preceding newline (this is not the case in e.g. GitHub-flavoured markdown)
+    + A list requires a preceding newline  
+    (this is not the case in e.g. GitHub-flavoured markdown)
 3. **Don't** `dev.off()`: Devices are handled internally!
 
 <p style="margin-top:4em">
@@ -374,9 +367,9 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 **Growing list of output options**
 
-1. [Word](http://rmarkdown.rstudio.com/word_document_format.html)
-2. [PDF](http://rmarkdown.rstudio.com/pdf_document_format.html)
-3. [HTML](http://rmarkdown.rstudio.com/html_document_format.html)
+1. [HTML](http://rmarkdown.rstudio.com/html_document_format.html)
+2. [Word](http://rmarkdown.rstudio.com/word_document_format.html)
+3. [PDF](http://rmarkdown.rstudio.com/pdf_document_format.html)
 4. Presentation styles 
     + [ioslides](http://rmarkdown.rstudio.com/ioslides_presentation_format.html)
     + [slidify](http://slidify.org)
@@ -405,23 +398,25 @@ output:
 
 1. Title and subtitle
 2. Author (can have multiple authors as list for key `author`)
-3. Date (can be R code, e.g. `format(Sys.time(), '%d %B %Y')`)
+3. Date (can be R code)
 4. Output option: `html_document`, `pdf_document`, `word_document`, `ioslides_presentation`, `beamer_presentation`
 
 
-## <font color="forestgreen">**Interactive session**</font> {#ex}
+## <font color="forestgreen">**Interactive session 3**</font> {#ex}
 1. Make changes to the existing YAML header keys title and author.
-2. Change the date to automatically give the current "DayOfTheWeek, Day MonthName YearWithCentury".
-2. Add a subtitle to your document.
-2. Add a second authors.
-3. Change the output from a Word document to a ioslides presentation.
+2. Add an email address link to the author's name.
+3. Change the date to automatically give the current "DayOfTheWeek, Day MonthName YearWithCentury".
+4. Add a subtitle to your document.
+5. Add a second authors.
+6. Change the output from a Word document to an ioslides presentation by changing the YAML header.
 
-<p style="margin-top:4em">
+<p style="margin-top:3em">
 
 Hint:
 ```
 # R code
 ?strptime
+# format(Sys.time(), ...)
 ```
 
 
@@ -445,14 +440,14 @@ Hint:
 More chunk options can be found e.g. in the [R Markdown Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) and in [`knitr`'s documentation](https://yihui.name/knitr/options/).
 
 
-## <font color="forestgreen">**Interactive session**</font> {#ex}
-1. Write R code to show a barplot of how many characters participated in every Star Wars film.
-2. Include the R code chunk without executing it.
-1. Disable R output from an R code chunk.
-3. Only show the output of an R code chunk.
-4. Change the dimension of the (gg)plot.
+## <font color="forestgreen">**Interactive session 4**</font> {#ex}
+1. Returning to your `starwars` gender summary table, output only the table without showing the R code.
+2. Write R code to store the `starwars` `dataframe` in an external CSV file. Show *neither* code *nor* any output.
+3. Show the code for generating a table of how many characters participated in every Star Wars film; then
+4. Generate a barplot of how many characters participated in every Star Wars film.
+5. Change the dimension of the (gg)plot.
 
-<p style="margin-top:4em">
+<p style="margin-top:3em">
 
 Hint:
 ```
