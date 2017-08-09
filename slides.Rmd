@@ -46,12 +46,17 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 **What we will cover**
 
-1. Prerequisities and how to get started
-2. (R)Markdown 101
-3. Customising R markdown elements and outputs
-4. To interactivity and beyond!
+1. **Prerequisities and how to get started**
+    + R and RStudio
+    + Create a new RMarkdown document
+2. **(R)Markdown 101**
+3. **Customising R markdown elements and outputs**
+    + Changing the RMarkdown output
+    + Include tables and plots
+    + Layouting/theming
+4. **To interactivity and beyond!**
 
-<p style="margin-top:4em">
+<p style="margin-top:2em">
 
 <div class="boxed">Interactive sessions.</div>
 
@@ -416,6 +421,33 @@ df <- cbind.data.frame(film = unlist(starwars$films));
 ggplot(data = df, aes(film)) + geom_bar();
 ```
 
+
+## Equations
+
+**Use standard $\LaTeX$ syntax.**
+
+1. Inline equations: `$x=a$` produces $x=a$.
+2. Display equations: `$$ x = a $$` produces $$x=a\,.$$
+  
+**Complex multi-line equation example:**
+  
+<div class="columns-2">
+```
+ $$
+ \begin{aligned}
+ \frac{dq_i}{dt} &= \frac{\partial H}{\partial p_i} \\
+ \frac{dp_i}{dt} &= -\frac{\partial H}{\partial q_i}
+ \end{aligned}
+ $$
+```
+
+$$
+\begin{aligned}
+\frac{dq_i}{dt} &= \frac{\partial H}{\partial p_i} \\
+\frac{dp_i}{dt} &= -\frac{\partial H}{\partial q_i}
+\end{aligned}
+$$
+</div>
 
 ## Tables
 
