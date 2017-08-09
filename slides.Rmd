@@ -464,7 +464,9 @@ ggplot(data = df, aes(film)) + geom_bar();
 
 1. Inline equations: `$x=a$` produces $x=a$.
 2. Display equations: `$$ x = a $$` produces $$x=a\,.$$
-  
+
+<p style="margin-top:2em">
+
 **Complex multi-line equation example:**
   
 <div class="columns-2">
@@ -479,7 +481,6 @@ ggplot(data = df, aes(film)) + geom_bar();
 
 $$
 \begin{aligned}
-\phantom{...} \\
 \frac{dq_i}{dt} &= \frac{\partial H}{\partial p_i} \\
 \frac{dp_i}{dt} &= -\frac{\partial H}{\partial q_i}
 \end{aligned}
