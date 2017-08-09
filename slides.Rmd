@@ -43,7 +43,6 @@ MathJax.Hub.Config({
 knitr::include_graphics("figures/RMarkdown_formats.png")
 ```
 
-
 **What we will cover**
 
 1. **Prerequisities and how to get started**
@@ -510,6 +509,7 @@ DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 1. Manually construct a table with four columns, two rows and a header.
 2. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
 3. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
+4. Table layouting: Find an example using e.g. `pander::pandoc.table`
 
 <p style="margin-top:4em">
 
@@ -573,8 +573,8 @@ scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
 
-1. ...
-2. ...
+1. Generate a plot of the regression results of `height ~ gender`.
+2. Side-by-side plots
 3. ...
 
 
