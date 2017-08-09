@@ -127,15 +127,23 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 <li> **Render** <img src="figures/button_knit.png" style="width:80px;">
 
-## <font color="forestgreen">**Interactive session**</font> {#ex}
+## <font color="forestgreen">**Interactive session 1**</font> {#ex}
 <ol start="0">
-<li> If you need help with setting up RStudio and the necessary packages, now's the time to let us know...
+<li> If you need help with setting up RStudio and the necessary packages, now is the time to let us know...
 <p style="margin-top:2em">
 <li> Create a new R Markdown (Rmd) document in RStudio.
 <li> Select PDF, HTML and Word as output option.
 <li> Render the RMarkdown document to the corresponding output formats.
 <li> Locate and open the final output file.
-<li> Change the output format of an existing RMarkdown document
+<li> Change the output format of an existing RMarkdown document within RStudio.
+<li> Add some text to your RMarkdown file.  
+You can either use your own text or download a text file and copy & paste its content into your RMarkdown document.
+```
+# R code
+download.file(
+  "https://gist.github.com/mevers/f4b149520f32cfda538a43c31428d7c5/raw/sample_text.txt",
+  "sample_text.txt");
+```
 </ol>
 
 
