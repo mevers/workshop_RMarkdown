@@ -43,6 +43,7 @@ MathJax.Hub.Config({
 knitr::include_graphics("figures/RMarkdown_formats.png")
 ```
 
+
 **What we will cover**
 
 1. **Prerequisities and how to get started**
@@ -89,14 +90,11 @@ Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers
 
 ## Prerequisities 2
 
-**Important R packages**
+**Important R packages and cheat sheet**
 ```{r results="hide", message=FALSE, warning=FALSE}
-pkg <- c("ggplot2", "rmarkdown", "knitr", "dplyr", "hrbrthemes", "scatterD3");
-lapply(pkg, function(x) { if (!require(x, character.only = TRUE, quietly = TRUE)) {
-  install.packages(x);
-  require(x, quietly = TRUE)}
-})
+source("https://gist.github.com/mevers/ac8eccfe45b0638a8b9a258664c91741/raw/install_workshop_libs.R");
 ```
+[RMarkdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2016/03/rmarkdown-cheatsheet-2.0.pdf)
 
 <p style="margin-top:2em">
 
@@ -131,7 +129,7 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
 <ol start="0">
-<li> If you need help with setting up RStudio and the necessary packages, this is the time...
+<li> If you need help with setting up RStudio and the necessary packages, now's the time to let us know...
 <p style="margin-top:2em">
 <li> Create a new R Markdown (Rmd) document in RStudio.
 <li> Select PDF, HTML and Word as output option.
@@ -509,7 +507,6 @@ DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 1. Manually construct a table with four columns, two rows and a header.
 2. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
 3. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
-4. Table layouting: Find an example using e.g. `pander::pandoc.table`
 
 <p style="margin-top:4em">
 
@@ -573,8 +570,8 @@ scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
 
 ## <font color="forestgreen">**Interactive session**</font> {#ex}
 
-1. Generate a plot of the regression results of `height ~ gender`.
-2. Side-by-side plots
+1. ...
+2. ...
 3. ...
 
 
