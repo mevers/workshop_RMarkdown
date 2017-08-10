@@ -36,6 +36,25 @@ MathJax.Hub.Config({
   }
 </style>
 
+<script>
+    $(document).ready(function() {
+    $('slide:not(.title-slide, .backdrop, .segue)').append('<footer></footer>');    
+    $('footer').attr('label', 'RMarkdown workshop');
+
+  })
+</script>
+
+<style>
+  footer:after {
+    font-size: 12pt;
+    content: attr(label);
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    line-height: 1.9;
+    display: block;
+  }
+</style>
 
 ## Overview {.columns-2}
 
@@ -111,7 +130,7 @@ head(starwars, n = 3);
 
 1. **File $\rightarrow$ New File $\rightarrow$ R Markdown**
 
-```{r echo=FALSE, out.width="800px"}
+```{r echo=FALSE, out.width="760px"}
 knitr::include_graphics("figures/new_RMarkdown_doc_1.png")
 ```
 
@@ -128,7 +147,7 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 ## <font color="forestgreen">**Interactive session 1**</font> {#ex}
 <ol start="0">
-<li> If you need help with setting up RStudio and the necessary packages, now is the time to let us know...
+<li> If you need help with setting up RStudio and R packages, now is the time to let us know...
 <p style="margin-top:2em">
 <li> Create a new R Markdown (Rmd) document in RStudio.
 <li> Select PDF, HTML and Word as output option.
