@@ -126,7 +126,6 @@ git clone https://github.com/mevers/workshop_RMarkdown
 2. Basic Unix/Linux skills
 
 
-
 ## Prerequisities 2
 
 **Important R packages**
@@ -167,15 +166,13 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 ## <font color="forestgreen">**Interactive session 1**</font> {#ex}
 <ol start="0">
-<li> If you need help with setting up RStudio and R packages, now is the time to let us know...
+<li> If you need help with cloning the GitHub repo, setting up RStudio, and/or installing necessary R packages, now is the time to let us know...
 <p style="margin-top:2em">
-<li> Create a new R Markdown (Rmd) document in RStudio.
-<li> Select PDF, Word, or HTML as output option.
+<li> Create a new R Markdown (Rmd) document in RStudio. Select PDF, Word, or HTML as output option.
 <li> Render the RMarkdown document to produce the output document.
 <li> Locate and open the final output file.
 <li> Change the output format of an existing RMarkdown document within RStudio.
-<li> Add some text to your RMarkdown file.  
-You can either use your own text or download a text file and copy & paste its content into your RMarkdown document.
+<li> Add some text to your RMarkdown file. You can either use your own text, or download a text file and copy & paste its content into your RMarkdown document.
 ```
 # R code
 download.file(
@@ -264,7 +261,7 @@ Beware the different Markdown flavours: GitHub, R Markdown, vanilla Markdown, ..
 **bold**, __bold__
 ```
 
-**Lists**
+**Lists** (*note the 4 space indent*)
 ```
 1. Level 1
     + Item 1
@@ -379,9 +376,6 @@ For example:
 **Beware: A HTML statement won't be recognised if you render your RMarkdown file as a Word document.**
     
 
-# RMarkdown elements
-
-
 ## RMarkdown style advice
 
 1. **Uniquely name your code chunks** (*replace double with single curly brackets*)
@@ -400,6 +394,9 @@ For example:
 
 More Markdown-generic details:  
 [Markdown style guide](http://www.cirosantilli.com/markdown-style-guide)
+
+
+# RMarkdown elements
 
 
 ## RMarkdown output {.columns-2}
@@ -667,7 +664,7 @@ knitr::include_graphics("figures/beyond_sw.jpg")
 + [geo-spatial plots](http://jcsmr-shiny.anu.edu.au:3838/sebastian/H5N1_SNA/), 
 + parallel-coordinates,
 
-<p style="margin-top:2em">**Example 3:** Bookdown
+<p style="margin-top:2em">**Example 3:** [Bookdown](https://mevers.github.io/HTS_data_analysis/)
 
 
 ## Thanks
