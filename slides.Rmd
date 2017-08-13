@@ -65,6 +65,8 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 **What we will cover**
 
+0. **Preface - prepare your data!**
+    + some comments on stages of data analysis
 1. **Prerequisities and how to get started**
     + R and RStudio
     + Create a new RMarkdown document
@@ -79,15 +81,24 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 <div class="boxed">6 interactive sessions.</div>
 
+# Preface - prepare your data!
+
+## Prepare your data
+
+In particular for interactive, "living" documents, it makes sense to separate data preparation and analysis/presentation.
+
+1. pre-process your raw data
+2. includes data cleaning, sanity checks, etc.
+3. deal with data inconsistencies
+4. results in clean data which can then be distributed with your documents (e.g. as appendix) and forms basis for iterations of subsequent analyses
 
 # Prerequisities and how to get started
-
 
 ## Prerequisities 1
 
 **For this workshop**
 
-Presenters: [Maurits Evers](mailto:maurits.evers@anu.edu.au), [Sebastian Kurscheid](mailto:sebastian.kurscheid@anu.edu.ai)  
+Presenters: [Maurits Evers](mailto:maurits.evers@anu.edu.au), [Sebastian Kurscheid](mailto:sebastian.kurscheid@anu.edu.au)  
 Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers/workshop_RMarkdown)
 ```bash
 git clone https://github.com/mevers/workshop_RMarkdown
@@ -641,10 +652,13 @@ $$
 knitr::include_graphics("figures/beyond_sw.jpg")
 ```
 
-<p style="margin-top:2em">**Example 1:** RMarkdown and shiny integration  
+<p style="margin-top:2em">**Example 1:** RMarkdown and shiny integration
+
++ [Example of static and interactive shiny report](http://jcsmr-shiny.anu.edu.au:3838/sebastian/MDCK_EMT_RNA-Seq/)
+
 <p style="margin-top:2em">**Example 2:** Advanced plots  
 
-+ geo-spatial plots, 
++ [geo-spatial plots](http://jcsmr-shiny.anu.edu.au:3838/sebastian/H5N1_SNA/), 
 + parallel-coordinates,
 
 <p style="margin-top:2em">**Example 3:** Bookdown
