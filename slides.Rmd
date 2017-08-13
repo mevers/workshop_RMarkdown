@@ -166,13 +166,13 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 
 ## <font color="forestgreen">**Interactive session 1**</font> {#ex}
 <ol start="0">
-<li> If you need help with cloning the GitHub repo, setting up RStudio, and/or installing necessary R packages, now is the time to let us know...
+<li> Clone the GitHub repo, and install the necessary R packages in R/RStudio. If you need help with cloning the GitHub repo, setting up R/RStudio, now is the time to let us know...
 <p style="margin-top:2em">
 <li> Create a new R Markdown (Rmd) document in RStudio. Select PDF, Word, or HTML as output option.
 <li> Render the RMarkdown document to produce the output document.
 <li> Locate and open the final output file.
 <li> Change the output format of an existing RMarkdown document within RStudio.
-<li> Add some text to your RMarkdown file. You can either use your own text, or download a text file and copy & paste its content into your RMarkdown document.
+<li> Add some text to your RMarkdown file. Use the sample text provided with the GitHub repository or downloaded from gist. You can also add your own sample text.
 ```
 # R code
 download.file(
