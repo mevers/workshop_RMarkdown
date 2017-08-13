@@ -89,13 +89,16 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 Presenters: [Maurits Evers](mailto:maurits.evers@anu.edu.au), [Sebastian Kurscheid](mailto:sebastian.kurscheid@anu.edu.ai)  
 Slides: [https://github.com/mevers/workshop_RMarkdown](https://github.com/mevers/workshop_RMarkdown)
+```bash
+git clone https://github.com/mevers/workshop_RMarkdown
+```
 
-<p style="margin-top:2em">
+<p style="margin-top:1em">
 
 **What you should bring / have brought**
 
 1. A laptop with a recent RStudio release already installed
-2. A set of questions
+2. Questions, questions, questions ...
 3. (Optional) A sample text document for you to layout in RMarkdown
 
 <p style="margin-top:2em">
@@ -150,8 +153,8 @@ knitr::include_graphics("figures/new_RMarkdown_doc_2.png")
 <li> If you need help with setting up RStudio and R packages, now is the time to let us know...
 <p style="margin-top:2em">
 <li> Create a new R Markdown (Rmd) document in RStudio.
-<li> Select PDF, HTML and Word as output option.
-<li> Render the RMarkdown document to the corresponding output formats.
+<li> Select PDF, Word, or HTML as output option.
+<li> Render the RMarkdown document to produce the output document.
 <li> Locate and open the final output file.
 <li> Change the output format of an existing RMarkdown document within RStudio.
 <li> Add some text to your RMarkdown file.  
@@ -177,24 +180,29 @@ download.file(
 <p style="margin-top:3em">
 
 For example, `pandoc` will translate
-```markdown
+```
 # Header
 ```
 into the following output-specific lines:
 
-<div class="columns-2">
-<p>For HTML output
-```html
-<h1>Header</h1>
+<table>
+<tr>
+<td> HTML output </td>
+<td> $\LaTeX$ output </td>
+</tr>
+<tr>
+<td>``` 
+<h1>Header</h1> 
 ```
-</p>
+</td>
+<td>
+``` 
+\section{Header} 
+```
+</td>
+</tr>
+</table>
 
-<p>For $\LaTeX$ output
-```latex
-\section{Header}
-```
-</p>
-</div>
 
 # (R)Markdown 101
 
@@ -325,15 +333,14 @@ $$ int_{x=0}^\infty dx \log{1+x} $$
 
 1. Experiment with different markdown elements in your RMarkdown document
     + Introduce headers
-    + Emphasise words (e.g. Star Wars characters in the text) by making them italic
+    + Emphasise words (e.g. Star Wars characters in the text) by making them *italic*
     + Create a [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)/[Wookieepedia](http://starwars.wikia.com/wiki/Main_Page) link to a planet's name. 
 2. Evaluate R code and show results
     + Return Tukey's five number summary of the height of all `starwars` characters
     + Show a summary table of the gender distribution based on all `starwars` characters
     + Show those characters of the `starwars` `dataframe` that have no reported gender
 2. Render the document and check the resulting output file
-3. Are there any specific text elements you would like to typeset? For example, what about ...
-    + ... underlining/strikethrough text?
+3. Are there any specific text elements you would like to typeset? E.g. underlining/strikethrough text?
 
 
 ## (R)Markdown 101 -- Output-specific layouting
