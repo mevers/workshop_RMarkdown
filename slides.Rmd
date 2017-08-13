@@ -39,7 +39,7 @@ MathJax.Hub.Config({
 <script>
     $(document).ready(function() {
     $('slide:not(.title-slide, .backdrop, .segue)').append('<footer></footer>');    
-    $('footer').attr('label', 'RMarkdown workshop August 2017');
+    $('footer').attr('label', 'RMarkdown workshop (August 2017)');
 
   })
 </script>
@@ -56,17 +56,14 @@ MathJax.Hub.Config({
   }
 </style>
 
-## Overview {.columns-2}
+## Overview of what we will cover {.columns-2}
 
 ```{r echo=FALSE, out.width="450px"}
 knitr::include_graphics("figures/RMarkdown_formats.png")
 ```
 
-
-**What we will cover**
-
 0. **Preface - prepare your data!**
-    + some comments on stages of data analysis
+    + Some comments on stages of data analysis
 1. **Prerequisities and how to get started**
     + R and RStudio
     + Create a new RMarkdown document
@@ -77,22 +74,31 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
     + Layouting/theming
 4. **To interactivity and beyond!**
 
-<p style="margin-top:2em">
+<div class="boxed">Interactive sessions $\times$ 6</div>
 
-<div class="boxed">6 interactive sessions.</div>
 
 # Preface - prepare your data!
 
-## Prepare your data
 
-In particular for interactive, "living" documents, it makes sense to separate data preparation and analysis/presentation.
+## Prepare your data {.columns-2}
 
-1. pre-process your raw data
-2. includes data cleaning, sanity checks, etc.
-3. deal with data inconsistencies
-4. results in clean data which can then be distributed with your documents (e.g. as appendix) and forms basis for iterations of subsequent analyses
+<p style="margin-left:5em;">
+```{r echo=FALSE, out.width="130px"}
+knitr::include_graphics("figures/data_prep.png")
+```
+</p>
+
+In particular for interactive, "living" documents, it makes sense to separate **data preparation** from **data analysis/presentation**.
+
+1. Pre-process your raw data; this includes
+    + data cleaning, 
+    + sanity checks, etc.
+2. Deal with data inconsistencies
+4. Store clean/tidy data, which can then be distributed with your documents (e.g. in the appendix, or as an `RData` file) and forms the basis for iterations of subsequent analyses
+
 
 # Prerequisities and how to get started
+
 
 ## Prerequisities 1
 
