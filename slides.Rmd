@@ -39,7 +39,7 @@ MathJax.Hub.Config({
 <script>
     $(document).ready(function() {
     $('slide:not(.title-slide, .backdrop, .segue)').append('<footer></footer>');    
-    $('footer').attr('label', 'RMarkdown workshop');
+    $('footer').attr('label', 'RMarkdown workshop August 2017');
 
   })
 </script>
@@ -77,7 +77,7 @@ knitr::include_graphics("figures/RMarkdown_formats.png")
 
 <p style="margin-top:2em">
 
-<div class="boxed">Interactive sessions.</div>
+<div class="boxed">6 interactive sessions.</div>
 
 
 # Prerequisities and how to get started
@@ -467,7 +467,7 @@ More chunk options can be found e.g. in the [R Markdown Reference Guide](https:/
 
 
 ## <font color="forestgreen">**Interactive session 4**</font> {#ex}
-1. Returning to your `starwars` gender summary table, output only the table without showing the R code.
+1. Returning to your `starwars` gender summary table, output *only* the table *without* showing the R code.
 2. Write R code to store the `starwars` `dataframe` in an external CSV file. Show *neither* code *nor* any output.
 3. Show the code for generating a table of how many characters participated in every Star Wars film; then
 4. Generate a barplot of how many characters participated in every Star Wars film.
@@ -513,6 +513,7 @@ $$
 $$
 </div>
 
+
 ## Tables
 
 **Different ways to present tabular data.**
@@ -554,22 +555,23 @@ DT::datatable(starwars[, 1:10], options = list(pageLength = 6, scrollX = TRUE));
 ```
 
 
-## <font color="forestgreen">**Interactive session**</font> {#ex}
+## <font color="forestgreen">**Interactive session 5**</font> {#ex}
 
-1. Manually construct a table with four columns, two rows and a header.
-2. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method.
+1. Manually construct a table with the alphabetical Star Wars movie titles in column 1, and your personal review score as a number between 1 (lowest) to 10 (highest) in column 2. 
+2. Write R code to show the first six columns of `starwars` in a Word document using a suitable R method. Change the height from [cm] to [m], and allow for 2 digits after the comma.
 3. Write R code to show the first 10 columns of `starwars` in a HTML document using a suitable R method.
 
 <p style="margin-top:4em">
 
-Note: Depending on the R method, you might have to install additional R packages, e.g. for `pander`:
+Note: Depending on the R method, you might have to install additional R packages, e.g. for `stargazer`:
 ```
 # R code
-# Install (if necessary) and load R package 'pander'
-if (!require("pander", quietly = TRUE)) {
-  install.packages("pander");
-  require("pander", quietly = TRUE)}
+# Install (if necessary) and load R package 'stargazer'
+if (!require("stargazer", quietly = TRUE)) {
+  install.packages("stargazer", repos = "http://cran.rstudio.com/");
+  require("stargazer", quietly = TRUE)}
 ```
+
 
 ## Static and interactive plots and figures
 
@@ -596,7 +598,7 @@ if (!require("pander", quietly = TRUE)) {
 <p style="margin-top:-2em">
 ```{r, fig.width = 10, fig.height = 5}
 df <- cbind.data.frame(skin_color = unlist(lapply(starwars$skin_color, strsplit, ", "))); 
-ggplot(df, aes(skin_color)) + geom_bar() + theme_bw() + theme(axis.text.x = element_text(angle = 90, hjust = 1));
+ggplot(df, aes(skin_color)) + geom_bar() + theme(axis.text.x = element_text(angle=90, hjust=1, vjust=0.5));
 ```
 
 
@@ -620,16 +622,45 @@ scatterD3(x = starwars$height, y = starwars$mass, lab = starwars$name);
 ```
 
 
-## <font color="forestgreen">**Interactive session**</font> {#ex}
+## <font color="forestgreen">**Interactive session 6**</font> {#ex}
 
-1. ...
-2. ...
-3. ...
+1. Show the height and log10-transformed age distributions of the `starwars` characters as density plots.
+2. Show an interactive barplot distribution of eye colors of the `starwars` characters using the R package `plotly`.
+3. Based on the `starwars` characters, assess results from a linear model
+$$
+\text{height} = \beta_0 + \beta_1 \times \log_{10}\text{mass}\,.
+$$
+    + Show fit results as a table.
+    + Show the regression curve.
+    + Is mass a statistically significant predictor?
 
 
-## Beyond interactive plots
+## Beyond interactive plots {.columns-2}
 
-**Example 1:** RMarkdown and shiny integration
+```{r echo=FALSE, out.width="400px"}
+knitr::include_graphics("figures/beyond_sw.jpg")
+```
 
-**Example 2:** Bookdown
+<p style="margin-top:2em">**Example 1:** RMarkdown and shiny integration  
+<p style="margin-top:2em">**Example 2:** Advanced plots  
 
++ geo-spatial plots, 
++ parallel-coordinates,
+
+<p style="margin-top:2em">**Example 3:** Bookdown
+
+
+## Thanks
+
+```{r echo=FALSE, out.width="500px"}
+knitr::include_graphics("figures/feedback.png")
+```
+
+**We welcome feedback of any form!**
+
+<p style="margin-top:4em">
+
+Please let us know or send us an email.
+
+[Maurits Evers](maurits.evers@anu.edu.au)  
+[Sebastian Kurscheid](sebastian.kurscheid@anu.edu.au)
