@@ -384,6 +384,7 @@ For example:
 ```
     + increases readibility
     + helps with caching
+    + allows easier navigation of document in RStudio
 2. **Whitespace is important**: 
     + Two whitespaces at the end of a line identify a manual linebreak
     + A list requires a preceding newline  
